@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {SetStateAction, useState} from "react";
 import {
   Paper,
   TableBody,
@@ -14,17 +14,17 @@ import {
   Top,
   Wrapper
 } from "../../style/member.styled.ts";
-import AsideMenu from "../../components/aside.tsx";
+
 
 export default function MemberMain() {
   const [page, setPage] = useState<number>(0);
   const [rowsPerPage, setRowPerPage] = useState<number>(10);
 
-  const handleChangePage = (event, newPage) => {
+  const handleChangePage = (_event: never, newPage: SetStateAction<number>) => {
     setPage(newPage)
   };
 
-  const handleChangeRowsPerPage = (event) => {
+  const handleChangeRowsPerPage = (event: { target: { value: string; }; }) => {
     setRowPerPage(parseInt(event.target.value, 10));
     setPage(0)
   }

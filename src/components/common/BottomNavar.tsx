@@ -1,21 +1,21 @@
 import {useState} from "react";
-import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import CampaignIcon from '@mui/icons-material/Campaign';
+import {StyledBottomNav} from "../../style/bar.styled.ts";
 
 export default function BottomNavBar() {
   const [value, setValue] = useState(0);
 
   return (
-    <Box>
+    <StyledBottomNav>
       <BottomNavigation
         showLabels
         value={value}
-        onChange={(event, newValue) => {
+        onChange={(_event, newValue) => {
           setValue(newValue);
         }}
       >
@@ -24,6 +24,6 @@ export default function BottomNavBar() {
         <BottomNavigationAction label="Calendar" icon={<CalendarMonthIcon/>}/>
         <BottomNavigationAction label="Notice" icon={<CampaignIcon/>}/>
       </BottomNavigation>
-    </Box>
+    </StyledBottomNav>
   );
 }

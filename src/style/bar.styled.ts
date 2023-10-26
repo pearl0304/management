@@ -1,6 +1,7 @@
 import {alpha, styled} from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 
+
 export const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -41,4 +42,12 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
       },
     },
   },
+}));
+
+export const StyledBottomNav = styled('div')(() => ({
+  position: 'fixed',
+  bottom: 0,
+  left: 0,
+  width : '100%',
+
 }));
